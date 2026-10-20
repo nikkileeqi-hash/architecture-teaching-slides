@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>建筑初步｜从贴出来到做准确：1:1户型放样精度与细部工艺</title>
+<style>
+:root{--ink:#17352f;--muted:#52645e;--paper:#f4f1e9;--white:#fffdf8;--line:#d6d7cc;--accent:#ce673f;--mint:#dce9df;--yellow:#f4df9a;--red:#a94235}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--paper);color:var(--ink);font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif}button{font:inherit}body{overflow:hidden}
+.slide{display:none;width:100vw;height:100vh;overflow:auto;padding:clamp(28px,4.5vw,72px) clamp(30px,6vw,100px) 82px;background:var(--paper);position:relative}.slide.active{display:block}.slide:nth-of-type(even){background:#eef2eb}
+.slide:before{content:"建筑初步 · 1:1空间验证";display:block;color:var(--accent);font-size:clamp(15px,1.4vw,23px);font-weight:800;letter-spacing:.06em;margin-bottom:1.5vh}
+h1{font-size:clamp(38px,5.5vw,82px);line-height:1.13;margin:.1em 0 .3em}h2{font-size:clamp(31px,4.1vw,58px);line-height:1.18;margin:.1em 0 .35em}h3{font-size:clamp(22px,2vw,34px);margin:.1em 0 .5em}p,li{font-size:clamp(20px,2.1vw,32px);line-height:1.42}p{margin:.25em 0 .65em}small,.small{font-size:clamp(16px,1.25vw,21px);line-height:1.45}.muted{color:var(--muted)}.lead{font-size:clamp(24px,2.7vw,42px);font-weight:700}.pill{display:inline-block;padding:.22em .6em;border-radius:100px;background:var(--mint);font-size:clamp(16px,1.5vw,24px);font-weight:800;margin-right:10px}.orange{color:var(--accent)}.red{color:var(--red)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,48px);align-items:start}.grid.three{grid-template-columns:repeat(3,1fr)}.card{background:var(--white);border:2px solid var(--line);border-radius:18px;padding:clamp(17px,2vw,30px)}.card p,.card li{font-size:clamp(18px,1.65vw,27px)}.card h3{font-size:clamp(23px,2.2vw,35px)}.note{border-left:8px solid var(--accent);padding:18px 25px;background:#fff8e8;border-radius:0 14px 14px 0}.note p{margin:0}.diagram{background:var(--white);border:2px solid var(--line);border-radius:20px;padding:12px}.diagram svg{display:block;width:100%;height:auto;max-height:53vh}.caption{font-size:clamp(15px,1.15vw,19px);color:var(--muted);text-align:center;padding:3px 10px 8px}.steps{counter-reset:s;list-style:none;padding:0;margin:0}.steps li{padding:0 0 .48em 2.1em;position:relative}.steps li:before{counter-increment:s;content:counter(s);position:absolute;left:0;top:.05em;background:var(--ink);color:white;width:1.55em;height:1.55em;border-radius:50%;display:grid;place-items:center;font-size:.72em;font-weight:800}.question{background:var(--yellow);padding:16px 24px;border-radius:14px;font-size:clamp(21px,2vw,31px);font-weight:800}.question:before{content:"想一想 · ";color:#79500f}.time{position:absolute;right:clamp(30px,6vw,100px);top:clamp(28px,4.5vw,72px);font-size:clamp(17px,1.4vw,22px);color:var(--muted);font-weight:700}.table{width:100%;border-collapse:collapse;background:var(--white);font-size:clamp(18px,1.7vw,28px)}.table th,.table td{border:2px solid var(--line);padding:.38em .55em;text-align:left}.table th{background:var(--mint)}.table tr:nth-child(even){background:#f7f8f3}.checklist{display:grid;grid-template-columns:1fr 1fr;gap:12px}.check{background:var(--white);border:2px solid var(--line);border-radius:12px;padding:12px 16px;font-size:clamp(17px,1.65vw,26px);line-height:1.3}.check input{width:1.1em;height:1.1em;accent-color:var(--ink);margin-right:.35em}.toolbar{position:fixed;bottom:0;left:0;right:0;display:flex;align-items:center;gap:12px;padding:10px 20px;background:#17352ff2;color:white;z-index:10}.toolbar button{background:white;color:var(--ink);border:0;border-radius:8px;padding:9px 18px;font-weight:800;cursor:pointer}.toolbar button:disabled{opacity:.4;cursor:default}.toolbar .spacer{flex:1}.toolbar span{font-size:17px}.print-only{display:none}svg text{font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif;fill:var(--ink);font-weight:700}
+@media(max-width:750px){.slide{padding:22px 18px 85px}.slide:before{margin-bottom:14px}.grid,.grid.three,.checklist{grid-template-columns:1fr}.diagram svg{max-height:none}.time{position:static;display:block;margin-bottom:8px}.card{padding:14px}.toolbar{gap:7px;padding:7px}.toolbar button{padding:8px 10px}.toolbar span{font-size:13px}body{overflow:hidden}}
+@media print{@page{size:A4 landscape;margin:10mm}body{overflow:visible;background:white}.slide,.slide.active{display:block;width:auto;height:auto;min-height:180mm;overflow:visible;page-break-after:always;break-after:page;padding:10mm 12mm;background:white!important}.slide:last-of-type{page-break-after:auto;break-after:auto}.slide:before{font-size:10pt;margin-bottom:3mm}h1{font-size:33pt}h2{font-size:26pt}h3{font-size:16pt}p,li,.lead,.question,.table,.check{font-size:13pt}.small,.caption{font-size:9pt}.card p,.card li,.card h3{font-size:12pt}.toolbar{display:none}.diagram svg{max-height:110mm}.print-only{display:block}.time{font-size:10pt}.grid{gap:6mm}.card{padding:4mm}.checklist{gap:3mm}}
+</style>
+</head>
+<body>
+<section class="slide active" aria-label="封面">
+ <span class="time">45分钟 · 首节课</span>
+ <h1>从贴出来<br>到做准确</h1>
+ <p class="lead">1:1户型放样精度与细部工艺</p>
+ <div class="note"><p>今天的目标：让地面线条能被<b>测量、复核、理解</b>，并能指导下一轮空间体验。</p></div>
+ <p class="small muted" style="margin-top:4vh">每组户型不同，今天统一的是放样方法与验收逻辑。<br>材料：卷尺、墨线/拉绳、直角尺或3-4-5绳、纸胶带、美工刀、切割垫、记号笔。</p>
+</section>
+<section class="slide">
+ <span class="time">0–5分钟</span><h2>回看现场：哪里“看着差不多”？</h2>
+ <div class="grid three">
+  <div class="card"><h3>① 线不直</h3><p>墙线或家具边缘偏斜、宽窄不一；房间转角看似直角，量起来却不对。</p></div>
+  <div class="card"><h3>② 弧线难贴</h3><p>弧形家具直接整条贴，胶带起皱、翘边，弧度失真。</p></div>
+  <div class="card"><h3>③ 接头粗糙</h3><p>靠手撕形成毛边；直角处叠得过厚、端部露出尖角。</p></div>
+ </div>
+ <p class="question" style="margin-top:3vh">如果只能先修一个错误，哪个最会影响整个户型的空间判断？为什么？</p>
+ <p class="small muted">教师引导：先修控制线与关键转角，再修局部曲线和接头；因为基准偏了，后面越贴越偏。</p>
+</section>
+<section class="slide">
+ <span class="time">5–8分钟</span><h2>今天的精度，先约定“量哪里”</h2>
+ <div class="grid">
+  <div class="card"><h3>每组先定三件事</h3><ol><li>选一条最长、最稳定的<b>基准线</b>。</li><li>给关键墙角标出<b>定位点</b>，记录来自本组图纸的尺寸。</li><li>说清尺寸量至胶带<b>内缘、外缘还是中心线</b>，全组一致。</li></ol></div>
+  <div class="diagram"><svg viewBox="0 0 600 370" role="img" aria-label="纸胶带的内缘、中心线、外缘示意"><rect x="60" y="120" width="480" height="100" fill="#e6b977" stroke="#17352f" stroke-width="3"/><line x1="60" y1="120" x2="540" y2="120" stroke="#ce673f" stroke-width="5"/><line x1="60" y1="170" x2="540" y2="170" stroke="#17352f" stroke-width="3" stroke-dasharray="12 8"/><line x1="60" y1="220" x2="540" y2="220" stroke="#ce673f" stroke-width="5"/><text x="65" y="80" font-size="28">外缘</text><text x="230" y="160" font-size="27">中心线</text><text x="420" y="275" font-size="28">内缘</text><line x1="100" y1="84" x2="100" y2="119" stroke="#17352f" stroke-width="3"/><line x1="455" y1="227" x2="455" y2="260" stroke="#17352f" stroke-width="3"/><text x="68" y="330" font-size="24">混用边界，墙厚和净距就会变</text></svg><div class="caption">示意图 1 · 贴之前先统一测量边界</div></div>
+ </div>
+</section>
+<section class="slide">
+ <span class="time">8–16分钟</span><h2>线贴不直：先定位，再连接</h2>
+ <div class="grid">
+  <div><ol class="steps"><li>按图纸尺寸在基准线上标起点、终点；长边增加中间校核点。</li><li>拉紧细绳或弹墨线，形成一条<b>可见的控制线</b>。</li><li>两人配合：一人控卷、一人沿约定边缘逐段压贴；<b>先轻贴，复核后压实</b>。</li><li>用卷尺复核端点与中间点；偏了就揭起重贴，不靠局部硬拉修正。</li></ol><p class="question">为什么“一边放卷一边凭眼睛找直”容易越贴越偏？</p></div>
+  <div class="diagram"><svg viewBox="0 0 620 420" role="img" aria-label="沿基准线以端点和中间点校核胶带直线"><line x1="60" y1="170" x2="560" y2="170" stroke="#17352f" stroke-width="4" stroke-dasharray="13 9"/><path d="M60 190 Q180 125 310 215 Q420 250 560 185" fill="none" stroke="#ce673f" stroke-width="17" opacity=".45"/><line x1="60" y1="169" x2="560" y2="169" stroke="#ce673f" stroke-width="10"/><circle cx="60" cy="169" r="10" fill="#17352f"/><circle cx="310" cy="169" r="10" fill="#17352f"/><circle cx="560" cy="169" r="10" fill="#17352f"/><text x="35" y="115" font-size="25">起点</text><text x="255" y="115" font-size="25">校核点</text><text x="520" y="115" font-size="25">终点</text><text x="70" y="315" font-size="25" fill="#ce673f">凭眼贴：漂移</text><text x="70" y="365" font-size="25">沿控制线贴：可复核</text></svg><div class="caption">示意图 2 · 长线不能只靠首尾两点目测</div></div>
+ </div>
+</section>
+<section class="slide">
+ <span class="time">16–22分钟</span><h2>直角校核：3–4–5 + 对角线</h2>
+ <div class="grid">
+  <div class="diagram"><svg viewBox="0 0 620 440" role="img" aria-label="三四五直角校核与矩形对角线复核"><line x1="105" y1="345" x2="505" y2="345" stroke="#17352f" stroke-width="9"/><line x1="105" y1="345" x2="105" y2="45" stroke="#17352f" stroke-width="9"/><line x1="105" y1="45" x2="505" y2="345" stroke="#ce673f" stroke-width="5" stroke-dasharray="14 9"/><rect x="105" y="310" width="35" height="35" fill="none" stroke="#17352f" stroke-width="4"/><circle cx="105" cy="345" r="9" fill="#ce673f"/><circle cx="105" cy="45" r="9" fill="#ce673f"/><circle cx="505" cy="345" r="9" fill="#ce673f"/><text x="280" y="390" font-size="28">4份</text><text x="34" y="195" font-size="28">3份</text><text x="280" y="150" font-size="28" fill="#ce673f">5份</text></svg><div class="caption">示意图 3 · 可用 0.6m、0.8m、1.0m 等同比例长度</div></div>
+  <div><ol class="steps"><li>从同一角点沿两边各量<b>3份、4份</b>，标记两点。</li><li>两标记点间应量得<b>5份</b>；否则调整第二条边，再量。</li><li>房间轮廓完成后核对对边尺寸与两条对角线。矩形两条对角线应相等。</li></ol><div class="note"><p>对角线相等只是<b>辅助复核</b>；仍要结合边长和直角检查。误差要求以本次课程约定和场地条件为准。</p></div></div>
+ </div>
+</section>
+<section class="slide">
+ <span class="time">22–29分钟</span><h2>弧形家具：先找控制点，再分段贴</h2>
+ <div class="grid">
+  <div><ol class="steps"><li>从图纸找家具外包尺寸：最左、最右、最前、最后点；先贴定位十字。</li><li>若为规则圆弧，标圆心/半径与起止点；若无半径，用图纸上可读的若干中间控制点定位。</li><li>将曲线分成短段：<b>窄胶带、小段接续</b>，或用短直线近似弧线。</li><li>退后两三步看整体，再检查桌椅周边通行距离是否仍符合本组图纸意图。</li></ol></div>
+  <div class="diagram"><svg viewBox="0 0 650 450" role="img" aria-label="弧形家具以外包框和控制点定位后用短段胶带逼近"><rect x="86" y="65" width="480" height="310" rx="3" fill="none" stroke="#9aac9b" stroke-width="3" stroke-dasharray="11 9"/><path d="M130 315 C180 100 470 100 520 315" fill="none" stroke="#d8d9cc" stroke-width="27"/><polyline points="130,315 150,245 195,185 260,145 325,130 390,145 455,185 500,245 520,315" fill="none" stroke="#ce673f" stroke-width="10" stroke-linejoin="bevel"/><g fill="#17352f"><circle cx="130" cy="315" r="8"/><circle cx="195" cy="185" r="8"/><circle cx="325" cy="130" r="8"/><circle cx="455" cy="185" r="8"/><circle cx="520" cy="315" r="8"/></g><text x="190" y="52" font-size="24">先定外包范围</text><text x="185" y="410" font-size="24">控制点 → 短段连接</text></svg><div class="caption">示意图 4 · 弧线的目标是可辨识的家具轮廓，不是强迫宽胶带连续弯曲</div></div>
+ </div>
+</section>
+<section class="slide">
+ <span class="time">29–34分钟</span><h2>直角接头：裁切、对边、压实</h2>
+ <div class="grid">
+  <div><ol class="steps"><li>先标出理论转角，分别量到转角处。</li><li>在<b>切割垫</b>上用尺和美工刀裁平端头；刀片只在垫上用，不在场地地面上切。</li><li>两条直带按约定的内缘或外缘对齐，尽量端面对接；必要时用短补片固定。</li><li>指腹向两侧压实，检查：无毛边、无突出的尾巴、角点位置清楚。</li></ol></div>
+  <div class="diagram"><svg viewBox="0 0 620 410" role="img" aria-label="撕裂毛边与裁切平整的直角接头对比"><text x="65" y="65" font-size="29" fill="#a94235">手撕 / 毛边</text><path d="M80 115 L300 115 L300 170 L271 160 L284 178 L270 185 L80 185 Z" fill="#e5aa70" stroke="#a94235" stroke-width="3"/><path d="M270 160 L280 370 L220 370 L220 175" fill="#e5aa70" stroke="#a94235" stroke-width="3"/><text x="360" y="65" font-size="29">尺切 / 对齐</text><rect x="380" y="115" width="190" height="70" fill="#e5aa70" stroke="#17352f" stroke-width="3"/><rect x="500" y="185" width="70" height="185" fill="#e5aa70" stroke="#17352f" stroke-width="3"/><circle cx="500" cy="185" r="7" fill="#17352f"/><text x="370" y="405" font-size="22">角点可读、边缘平整</text></svg><div class="caption">示意图 5 · 尺寸先准，收口再净</div></div>
+ </div>
+</section>
+<section class="slide">
+ <span class="time">34–38分钟</span><h2>45°拼接：用在转角的“表面收口”</h2>
+ <div class="grid">
+  <div class="diagram"><svg viewBox="0 0 620 460" role="img" aria-label="两条等宽胶带在九十度转角处各切四十五度并拼接"><path d="M70 290 L360 290 L360 110 L435 110 L435 365 L70 365 Z" fill="#e5aa70" stroke="#17352f" stroke-width="3"/><line x1="360" y1="290" x2="435" y2="365" stroke="#ce673f" stroke-width="7"/><text x="180" y="250" font-size="25">第一条</text><text x="450" y="205" font-size="25">第二条</text><text x="352" y="405" font-size="26" fill="#ce673f">45° + 45°</text><path d="M440 330 Q470 350 490 374" fill="none" stroke="#ce673f" stroke-width="3"/><text x="80" y="60" font-size="26">等宽胶带 · 90°转角</text></svg><div class="caption">示意图 6 · 示意接缝位置；实际先试切，再微调端头</div></div>
+  <div><ol class="steps"><li>两条<b>等宽</b>胶带在切割垫上，各用45°线裁出端头。</li><li>在转角处让两斜边相接，沿选定基准边对齐，避免重叠增厚。</li><li>轻贴试位，缝隙或突出明显就重新裁；确认后压实。</li></ol><div class="note"><p>45°拼接是<b>细部工艺</b>，不能补救位置错误。复杂或不等宽转角，优先保持准确边界并做平整裁切。</p></div></div>
+ </div>
+</section>
+<section class="slide">
+ <span class="time">38–42分钟</span><h2>小组现场返工：按“基准—轮廓—细部”</h2>
+ <table class="table"><thead><tr><th>时间</th><th>组内任务</th><th>完成时留下的证据</th></tr></thead><tbody><tr><td>第1分钟</td><td>选一个最影响空间判断的偏差，圈出问题点</td><td>记录原位置或拍照</td></tr><tr><td>第2–3分钟</td><td>重新量点、拉线或用3–4–5校角；再返工贴线</td><td>写下核对尺寸</td></tr><tr><td>第4分钟</td><td>处理一处弧线或接头，组员交叉检查</td><td>在检查表打钩或备注</td></tr></tbody></table>
+ <p class="question" style="margin-top:2vh">本组哪些尺寸必须照图纸严格控制？哪些细节可以用近似表达？</p>
+</section>
+<section class="slide">
+ <span class="time">42–45分钟</span><h2>离场前：返工检查表</h2>
+ <div class="checklist">
+  <label class="check"><input type="checkbox">已标定基准线、关键角点</label>
+  <label class="check"><input type="checkbox">全组使用同一胶带测量边界</label>
+  <label class="check"><input type="checkbox">长线起点、中点、终点均复核</label>
+  <label class="check"><input type="checkbox">关键直角用3–4–5校过</label>
+  <label class="check"><input type="checkbox">主要空间轮廓的边长和对角线复核</label>
+  <label class="check"><input type="checkbox">弧形家具先有控制点，再分段连接</label>
+  <label class="check"><input type="checkbox">接头平整，无毛边、翘边和突尾</label>
+  <label class="check"><input type="checkbox">记录仍未解决的问题及原因</label>
+ </div>
+ <p class="small muted">建议每组保留一张“返工前/后”照片和一条实测记录，供下次讨论空间体验与尺度判断。</p>
+</section>
+<section class="slide">
+ <span class="time">课后备用页</span><h2>45分钟教学节奏与使用说明</h2>
+ <table class="table"><thead><tr><th>时间</th><th>教学环节</th><th>核心动作</th></tr></thead><tbody><tr><td>0–8分</td><td>问题回看、建立测量基准</td><td>辨认偏差；统一胶带边界</td></tr><tr><td>8–22分</td><td>直线与直角演示</td><td>定位、拉线、3–4–5和对角线</td></tr><tr><td>22–38分</td><td>曲线与接头演示</td><td>控制点、短段贴、裁切、45°拼接</td></tr><tr><td>38–45分</td><td>小组返工与互检</td><td>优先修整体，再修细部</td></tr></tbody></table>
+ <p class="small">浏览器中点击底部按钮，或用 ← / →、空格翻页；按 F11 全屏，Ctrl+P 打印全部页面。检查框可在屏幕上勾选；刷新页面会重置。</p>
+ <p class="small">学习通：本地 HTML 文件可能无法直接在线预览。更可靠的做法是把此文件发布到可公开访问的静态网页（例如 GitHub Pages），再将网址作为章节外部链接或学习资料分享；同时备一份 PPT/PDF 供平台上传或离线分发。若使用公开网页，勿把学生个人信息放入文件。</p>
+</section>
+<div class="toolbar" role="navigation" aria-label="课件翻页"><button id="prev" type="button">← 上一页</button><button id="next" type="button">下一页 →</button><span id="count"></span><div class="spacer"></div><button id="print" type="button">打印 / PDF</button></div>
+<script>
+(function(){const slides=[...document.querySelectorAll('.slide')],prev=document.getElementById('prev'),next=document.getElementById('next'),count=document.getElementById('count');let current=0;function show(n){current=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,i)=>s.classList.toggle('active',i===current));prev.disabled=current===0;next.disabled=current===slides.length-1;count.textContent=(current+1)+' / '+slides.length;location.hash='p'+(current+1)}prev.onclick=()=>show(current-1);next.onclick=()=>show(current+1);document.getElementById('print').onclick=()=>window.print();document.addEventListener('keydown',e=>{if(e.target instanceof HTMLInputElement)return;if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(current+1)}else if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(current-1)}});const n=parseInt(location.hash.replace('#p',''),10);show(Number.isFinite(n)?n-1:0)})();
+</script>
+</body>
+</html>
+
